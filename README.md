@@ -1,4 +1,4 @@
-# VPN节点 - 6月8日20M/S|免费V2ray/Clash/Shadowrocket/SSR订阅节点  更新时间 2025-06-08 09:43:05
+# VPN节点 - 6月12日20.2M/S|免费V2ray/Shadowrocket/SSR/Clash订阅节点  更新时间 2025-06-12 09:45:08
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://jiedianvpn.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://jiedianvpn.github.io/uploads/2025/06/0-20250608.yaml
-- https://jiedianvpn.github.io/uploads/2025/06/1-20250608.yaml
-- https://jiedianvpn.github.io/uploads/2025/06/2-20250608.yaml
-- https://jiedianvpn.github.io/uploads/2025/06/3-20250608.yaml
-- https://jiedianvpn.github.io/uploads/2025/06/4-20250608.yaml
+- https://jiedianvpn.github.io/uploads/2025/06/0-20250612.yaml
+- https://jiedianvpn.github.io/uploads/2025/06/1-20250612.yaml
+- https://jiedianvpn.github.io/uploads/2025/06/2-20250612.yaml
+- https://jiedianvpn.github.io/uploads/2025/06/3-20250612.yaml
+- https://jiedianvpn.github.io/uploads/2025/06/4-20250612.yaml
 
 ### V2ray订阅链接
 
-- https://jiedianvpn.github.io/uploads/2025/06/0-20250608.txt
-- https://jiedianvpn.github.io/uploads/2025/06/1-20250608.txt
-- https://jiedianvpn.github.io/uploads/2025/06/2-20250608.txt
-- https://jiedianvpn.github.io/uploads/2025/06/3-20250608.txt
-- https://jiedianvpn.github.io/uploads/2025/06/4-20250608.txt
+- https://jiedianvpn.github.io/uploads/2025/06/0-20250612.txt
+- https://jiedianvpn.github.io/uploads/2025/06/1-20250612.txt
+- https://jiedianvpn.github.io/uploads/2025/06/2-20250612.txt
+- https://jiedianvpn.github.io/uploads/2025/06/3-20250612.txt
+- https://jiedianvpn.github.io/uploads/2025/06/4-20250612.txt
 
 ### Sing-box订阅链接
 
-- https://jiedianvpn.github.io/uploads/2025/06/20250608.json
+- https://jiedianvpn.github.io/uploads/2025/06/20250612.json
 
 ## 更多clash节点订阅 ：
 
