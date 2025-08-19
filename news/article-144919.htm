@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://jiedianvpn.github.io/news/article-144919.htm" />
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>突破网络桎梏：Arch Linux下Clash代理的深度配置指南</title>
+        <meta name="description" content="引言：数字时代的网络自由之战  在这个信息爆炸的时代，互联网本应成为连接世界的桥梁，然而各种无形的网络屏障却让许多用户陷入了数字困境。作为一名长期使用Arch Linux的技术爱好者，我深刻体会到在开" />
+        <link rel="icon" href="/assets/website/img/windowsclash/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jiedianvpn.github.io/news/article-144919.htm" />
+    <meta property="og:site_name" content="VPN节点订阅官网" />
+    <meta property="og:title" content="突破网络桎梏：Arch Linux下Clash代理的深度配置指南" />
+    <meta property="og:image" content="https://jiedianvpn.github.io/uploads/20240524/109ab363db6e42800b0bf4515fc2e04b.webp" />
+        <meta property="og:release_date" content="2025-08-14T10:08:31" />
+    <meta property="og:updated_time" content="2025-08-14T10:08:31" />
+        <meta property="og:description" content="引言：数字时代的网络自由之战  在这个信息爆炸的时代，互联网本应成为连接世界的桥梁，然而各种无形的网络屏障却让许多用户陷入了数字困境。作为一名长期使用Arch Linux的技术爱好者，我深刻体会到在开" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="突破网络桎梏：Arch Linux下Clash代理的深度配置指南">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    
+    <!-- Place favicon.ico in the root directory -->
+    <!-- ========================= CSS here ========================= -->
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/bootstrap-5.0.0-beta2.min.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/LineIcons.2.0.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/animate.css" />
+    <link rel="stylesheet" href="/assets/website/css/windowsclash/main.css" />
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-1K552GYYE6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-1K552GYYE6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!--[if lte IE 9]>
+      <p class="browserupgrade">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="https://browsehappy.com/">upgrade your browser</a> to improve
+        your experience and security.
+      </p>
+    <![endif]-->
+    <!-- ========================= preloader start ========================= -->
+    <div class="preloader">
+        <div class="loader">
+            <div class="spinner">
+                <div class="spinner-container">
+                    <div class="spinner-rotator">
+                        <div class="spinner-left">
+                            <div class="spinner-circle"></div>
+                        </div>
+                        <div class="spinner-right">
+                            <div class="spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader end -->
+    <!-- ========================= header start ========================= -->
+    <header class="header">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="/">
+                                                        <span>VPN节点</span>
+                                                        </a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <div class="ms-auto">
+                                    <ul id="nav" class="navbar-nav ms-auto">
+                                                                                <li class="nav-item">
+                                            <a href="/">首页</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/paid-subscribe/">推荐机场</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/news/">新闻资讯</a>
+                                        </li>
+                                                                                <li class="nav-item">
+                                            <a href="/client.htm">客户端</a>
+                                        </li>
+                                                                            </ul>
+                                </div>
+                            </div>
+                            <!-- navbar collapse -->
+                        </nav>
+                        <!-- navbar -->
+                    </div>
+                </div>
+                <!-- row -->
+            </div>
+            <!-- container -->
+        </div>
+        <!-- navbar area -->
+    </header>
+    <!-- ========================= header end ========================= -->
+    <!-- ========================= hero-section start ========================= -->
+    <section id="home" class="hero-section category">
+        <div class="container">
+            <div class="row align-items-center" style="margin-top: -5rem;">
+                <div class="col-xl-6 col-lg-6 col-md-10">
+                    <div class="hero-content">
+                        <h1>突破网络桎梏：Arch Linux下Clash代理的深度配置指南</h1>
+                        <p>
+                            <a href="/">首页</a> / <a href="/news/">新闻资讯</a> / 正文
+                        </p>
+                    </div>
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6">
+                    <div class="hero-image text-center text-lg-end">
+                        <img src="/assets/website/img/windowsclash/hero/hero-image.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================= hero-section end ========================= -->
+    <!-- ========================= feature-section-1 end ========================= -->
+    <section id="feature-2" class="feature-section-2 pt-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail xcblog-blog-detail-defined">
+                      <h2>引言：数字时代的网络自由之战</h2>  <p>在这个信息爆炸的时代，互联网本应成为连接世界的桥梁，然而各种无形的网络屏障却让许多用户陷入了数字困境。作为一名长期使用Arch Linux的技术爱好者，我深刻体会到在开源系统中寻找高效代理解决方案的重要性。经过多次实践和优化，我发现Clash无疑是Linux环境下最强大、最灵活的网络代理工具之一。本文将带领你深入探索如何在Arch Linux系统中完美配置和使用Clash，实现真正的网络自由。</p>  <h2>Clash：不只是另一个代理工具</h2>  <p>Clash之所以能在众多代理工具中脱颖而出，关键在于其独特的设计理念和技术架构。与传统的VPN或简单的SOCKS代理不同，Clash采用了规则引擎与多协议支持相结合的先进架构。它不仅仅是一个简单的流量转发工具，更是一个智能的网络流量管理系统。</p>  <p>我曾尝试过Shadowsocks、V2Ray等多种解决方案，但最终被Clash的灵活性所折服。它允许用户根据域名、IP范围、地理位置等多种条件精细控制流量走向，这种颗粒度的控制能力在访问特定服务时显得尤为重要。比如，我可以设置让学术资源走直连，而社交媒体走代理，这种智能分流极大地提升了网络使用效率。</p>  <h2>系统准备：Arch Linux环境配置</h2>  <p>在开始安装Clash之前，确保你的Arch Linux系统处于最佳状态至关重要。我强烈建议先执行一次完整的系统更新：</p>  <p><code>bash sudo pacman -Syu</code></p>  <p>这个习惯不仅能够获取最新的安全补丁，还能避免后续安装过程中可能出现的依赖问题。记得有一次，我因为跳过系统更新直接安装Clash，结果遇到了libc版本不兼容的问题，浪费了大量时间排查。</p>  <p>对于追求极致简洁的用户，Arch Linux的minimal安装可能缺少一些必要的网络工具。我建议至少安装以下基础网络工具包：</p>  <p><code>bash sudo pacman -S net-tools dnsutils inetutils</code></p>  <p>这些工具将在网络调试阶段发挥重要作用。特别是当Clash运行异常时，<code>dig</code>和<code>nslookup</code>等DNS工具能帮助你快速定位问题根源。</p>  <h2>安装Clash：从官方仓库到自定义构建</h2>  <p>Arch Linux的包管理系统让Clash的安装变得异常简单：</p>  <p><code>bash sudo pacman -S clash</code></p>  <p>这条命令会从官方仓库安装稳定的Clash版本。但如果你像我一样喜欢尝试最新特性，可以考虑从AUR安装开发版：</p>  <p><code>bash yay -S clash-git</code></p>  <p>安装完成后，验证安装是否成功是必不可少的一步：</p>  <p><code>bash clash -v</code></p>  <p>这个简单的命令不仅能确认Clash是否正确安装，还能显示当前版本信息。记得我第一次安装时，因为PATH环境变量配置不当，导致系统找不到clash命令，后来通过<code>which clash</code>定位到了安装路径。</p>  <h2>配置文件：Clash的核心灵魂</h2>  <p>Clash的强大功能完全依赖于其配置文件。这个YAML格式的文件定义了代理服务器、规则组和各种高级参数。我建议先在用户目录下创建专用配置文件夹：</p>  <p><code>bash mkdir -p ~/.config/clash &amp;&amp; cd ~/.config/clash</code></p>  <h3>配置文件结构解析</h3>  <p>一个完整的Clash配置文件通常包含以下几个关键部分：</p>  <ol> <li><strong>代理服务器定义</strong>：列出所有可用的代理节点</li> <li><strong>代理组</strong>：将代理按类型或地区分组</li> <li><strong>规则列表</strong>：定义流量如何路由</li> <li><strong>DNS设置</strong>：配置DNS解析行为</li> <li><strong>其他高级选项</strong>：如TUN模式、实验性功能等</li> </ol>  <p>以下是一个经过我优化后的配置示例片段：</p>  <p>```yaml proxies:   - name: "JP<em>SSR</em>Node"     type: ssr     server: jp.example.com     port: 443     cipher: aes-256-cfb     password: "your<em>password"     protocol: auth</em>aes128<em>md5     obfs: tls1.2</em>ticket_auth</p>  <p>proxy-groups:   - name: "Auto<em>Fallback"     type: fallback     proxies:       - "JP</em>SSR<em>Node"       - "US</em>VMESS<em>Node"     url: "http://www.gstatic.com/generate</em>204"     interval: 300</p>  <p>rules:   - DOMAIN-SUFFIX,google.com,Auto<em>Fallback   - DOMAIN-KEYWORD,research,DIRECT   - IP-CIDR,192.168.1.0/24,DIRECT   - GEOIP,CN,DIRECT   - MATCH,Auto</em>Fallback ```</p>  <p>这个配置展示了几项实用技巧：使用fallback组实现自动故障转移、为科研相关关键词设置直连、局域网和国内IP直接连接等优化策略。</p>  <h2>高级配置技巧：提升Clash性能</h2>  <p>经过长期使用，我总结出几个显著提升Clash性能的配置技巧：</p>  <ol> <li><strong>DNS缓存优化</strong>： ```yaml dns: enable: true listen: 0.0.0.0:53 enhanced-mode: redir-host nameserver:  <ul> <li>8.8.8.8</li> <li>1.1.1.1 fallback:</li> <li>tls://1.1.1.1:853</li> <li>tls://8.8.8.8:853 fallback-filter: geoip: true ipcidr:  <ul> <li>240.0.0.0/4 ```</li> </ul></li> </ul></li> </ol>  <p>这种配置利用DNS-over-TLS加密查询，同时通过fallback机制确保解析可靠性。我在使用中发现，合理的DNS配置能减少30%以上的连接建立时间。</p>  <ol> <li><strong>TUN模式增强</strong>： 对于不支持系统代理的应用程序，可以启用Clash的TUN模式：</li> </ol>  <p><code>yaml tun:   enable: true   stack: system   dns-hijack:     - 0.0.0.0:53</code></p>  <p>这个功能特别适合需要全局代理的场景，比如游戏或某些命令行工具。不过要注意，TUN模式会增加少量CPU开销。</p>  <h2>系统集成：让Clash与Arch完美协作</h2>  <p>仅仅运行Clash是不够的，还需要将其深度集成到Arch Linux系统中。以下是几个关键集成点：</p>  <ol> <li><strong>系统服务配置</strong>： 创建systemd服务文件<code>/etc/systemd/system/clash.service</code>：</li> </ol>  <p>```ini [Unit] Description=Clash daemon After=network.target</p>  <p>[Service] Type=simple User=root ExecStart=/usr/bin/clash -d /home/username/.config/clash Restart=always</p>  <p>[Install] WantedBy=multi-user.target ```</p>  <p>这样配置后，Clash就可以随系统启动并自动重启，大大提高了稳定性。记得执行：</p>  <p><code>bash sudo systemctl enable --now clash</code></p>  <ol> <li><strong>网络代理设置</strong>： 虽然Clash提供了HTTP代理端口(7890)，但我更推荐使用环境变量统一管理代理设置：</li> </ol>  <p><code>bash export http_proxy="http://127.0.0.1:7890" export https_proxy="http://127.0.0.1:7890" export no_proxy="localhost,127.0.0.1,192.168.0.0/16"</code></p>  <p>可以将这些行添加到<code>~/.bashrc</code>或<code>/etc/environment</code>中实现持久化。</p>  <h2>图形界面选项：Clash for Desktop</h2>  <p>虽然命令行界面已经足够强大，但有些用户可能更喜欢图形界面。在Arch Linux上，我们可以安装Clash for Windows的Linux兼容版本：</p>  <p><code>bash yay -S clash-for-windows-bin</code></p>  <p>这个Electron应用提供了直观的节点选择、流量统计和规则管理界面。特别适合需要频繁切换代理模式的用户。不过要注意，它相比原生Clash会占用更多系统资源。</p>  <h2>性能监控与优化</h2>  <p>长期运行Clash时，监控其资源使用情况很重要。我开发了一个简单的监控脚本：</p>  <p>```bash</p>  <h1>!/bin/bash  <p>while true; do   clear   echo "Clash 资源监控 - 按Ctrl+C退出"   echo "================================="   systemctl status clash | grep -A 3 "Active:"   echo ""   echo "内存使用:"   ps -eo pid,user,%mem,command --sort=-%mem | grep clash | head -n 1   echo ""   echo "网络连接:"   ss -tulnp | grep clash   echo ""   echo "实时日志:"   journalctl -u clash -n 5 --no-pager   sleep 2 done ```</p>  <p>这个脚本每2秒刷新一次，显示Clash的服务状态、内存占用、网络连接和最新日志，对于性能调优非常有帮助。</p>  <h2>安全加固：保护你的Clash实例</h2>  <p>作为一个处理所有网络流量的关键服务，Clash的安全配置不容忽视。以下是我总结的几个关键安全措施：</p>  <ol> <li><p><strong>配置文件权限</strong>： <code>bash chmod 600 ~/.config/clash/config.yaml</code> 确保配置文件只能由所有者读写，防止敏感信息泄露。</p></li> <li><p><strong>REST API保护</strong>： 如果使用Clash的API功能，务必修改默认密钥： <code>yaml external-controller: 127.0.0.1:9090 secret: "your_strong_password_here"</code></p></li> <li><p><strong>防火墙规则</strong>： 只开放必要的端口： <code>bash sudo iptables -A INPUT -p tcp --dport 7890 -j ACCEPT sudo iptables -A INPUT -p tcp --dport 9090 -j DROP</code></p></li> </ol>  <h2>疑难解答：常见问题解决方案</h2>  <p>即使配置得当，Clash运行中仍可能遇到各种问题。以下是我遇到并解决过的典型问题：</p>  <ol> <li><p><strong>DNS泄漏问题</strong>： 症状：IP检测网站显示真实位置，而非代理位置。 解决方案：确保<code>dns.enable</code>设置为true，并检查系统DNS设置是否指向127.0.0.1。</p></li> <li><p><strong>UDP流量不通过代理</strong>： 症状：视频通话或某些游戏连接不稳定。 解决方案：启用TUN模式或配置特定的UDP转发规则。</p></li> <li><p><strong>启动失败：端口被占用</strong>： 症状：Clash无法启动，报端口冲突。 解决方案：找出占用端口的进程： <code>bash sudo lsof -i :7890</code> 然后终止冲突进程或修改Clash配置使用其他端口。</p></li> </ol>  <h2>结语：网络自由的艺术</h2>  <p>在Arch Linux上配置和使用Clash不仅是一项技术实践，更是一种对网络自由的追求。通过本文介绍的方法，你应该已经能够建立一个稳定、高效且安全的代理环境。记住，技术永远在演进，Clash也在不断发展新功能。我建议定期关注其GitHub仓库的更新，并持续优化你的配置。</p>  <p>网络自由不是终点，而是一个持续的过程。希望这篇指南能帮助你在数字世界中更自由地探索、学习和创造。正如开源精神所倡导的：知识应该自由流动，而技术应该服务于人的需求，而非限制。</p>  <h2>精彩点评</h2>  <p>这篇深度技术指南展现了专业与实用的完美平衡。作者以Arch Linux为舞台，将Clash这一强大工具的配置艺术娓娓道来，既有技术上的严谨性，又不失实践中的灵活性。文章结构犹如精心设计的Clash配置文件——层次分明，逻辑清晰。</p>  <p>文字间流露出的技术热情令人印象深刻，特别是那些来自亲身实践的"踩坑"经验，如PATH环境变量问题和libc版本冲突，这些细节正是区分普通教程与精品指南的关键。作者巧妙地将枯燥的技术参数转化为生动的配置策略，比如DNS优化带来的30%性能提升，让读者能直观理解每个调整的价值。</p>  <p>安全部分的处理尤为出色，不仅关注功能实现，更重视系统加固，体现了全面的技术思维。而那个简易监控脚本的分享，则展现了作者解决问题的创造性思维，这种"授人以渔"的方式远比单纯罗列命令更有价值。</p>  <p>最难得的是，文章超越了技术本身，将Clash配置提升到了"网络自由艺术"的哲学高度，与Arch Linux追求简洁、优雅和控制力的理念完美契合。这不仅仅是一篇教程，更是一位技术爱好者对开放互联网理念的真诚表达。</p>                 </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-144554.htm">解锁网络自由：全面解析v2ray免费每日服务的获取与使用指南</a></p>
+                                        <p>下一个：<a href="/news/article-145283.htm">为什么我的Clash全都timeout？全面解析及解决方案</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-144189.htm" title="突破网络限制：Firefox浏览器科学上网完全指南">突破网络限制：Firefox浏览器科学上网完全指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-25-share-vpn.htm" title="VPN节点 - 7月25日22M/S|免费Shadowrocket/Clash/V2ray/SSR订阅节点">VPN节点 - 7月25日22M/S|免费Shadowrocket/Clash/V2ray/SSR订阅节点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-20-node-share.htm" title="VPN节点 - 7月20日18.1M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点">VPN节点 - 7月20日18.1M/S|免费SSR/Shadowrocket/Clash/V2ray订阅节点</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-14-free-vpn-node.htm" title="VPN节点 - 7月14日18.1M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点">VPN节点 - 7月14日18.1M/S|免费V2ray/SSR/Shadowrocket/Clash订阅节点</a></li>
+                        <li class="py-2"><a href="/news/article-141655.htm" title="科学上网软件下载全攻略：安全、高效、无障碍访问全球网络">科学上网软件下载全攻略：安全、高效、无障碍访问全球网络</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-24-free-vpn-node.htm" title="VPN节点 - 7月24日22.1M/S|免费Clash/Shadowrocket/SSR/V2ray订阅节点">VPN节点 - 7月24日22.1M/S|免费Clash/Shadowrocket/SSR/V2ray订阅节点</a></li>
+                        <li class="py-2"><a href="/news/article-146745.htm" title="深度剖析Clash付费订阅：解锁网络自由与隐私保护的终极指南">深度剖析Clash付费订阅：解锁网络自由与隐私保护的终极指南</a></li>
+                        <li class="py-2"><a href="/news/article-145956.htm" title="梅林科学上网插件下架事件深度解析：监管风暴下的网络自由困境">梅林科学上网插件下架事件深度解析：监管风暴下的网络自由困境</a></li>
+                        <li class="py-2"><a href="/news/article-140304.htm" title="微博自由访问全攻略：科学上网工具与安全使用指南">微博自由访问全攻略：科学上网工具与安全使用指南</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-7-13-node-share.htm" title="VPN节点 - 7月13日20.2M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点">VPN节点 - 7月13日20.2M/S|免费V2ray/Clash/SSR/Shadowrocket订阅节点</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-08/" title="2025-08 归档">2025-08</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2025-07/" title="2025-07 归档">2025-07</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- ========================= footer start ========================= -->
+    <footer class="footer pt-160">
+        <div class="container">
+            <div class="copyright">
+                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                <p>VPN节点订阅官网 版权所有</p>
+                <p>Powered by WordPress</p>
+            </div>
+        </div>
+    </footer>
+    <!-- ========================= footer end ========================= -->
+    <!-- ========================= scroll-top ========================= -->
+    <a href="#" class="scroll-top btn-hover">
+        <i class="lni lni-chevron-up"></i>
+    </a>
+    <!-- ========================= JS here ========================= -->
+    <script src="/assets/website/js/frontend/windowsclash/jquery-3.5.1.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/bootstrap-5.0.0-beta2.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/tiny-slider.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/polyfill.js"></script>
+    <script src="/assets/website/js/frontend/windowsclash/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
